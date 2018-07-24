@@ -1,12 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8" />
-    <title>demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <style>
+        #canvasPic{
+            overflow:hidden;
+
+        }
+
+    </style>
 </head>
+
 <body>
-<div class="demo1"></div>
-<div class="demo2"></div>
-<script src="./out/index.js"></script>//注意在这里引入的是打包完成的js文件
+
+<canvas id="canvasPic" style="border:2px solid red;" width="400" height="400">
+
+
+</canvas>
+
+
+
+<script type="text/javascript">
+    var canvas=document.getElementById("canvasPic");
+    var ctx=canvas.getContext("2d");
+    drawShape(ctx,0,0);
+
+    //绘制形状
+    function drawShape(ctx, xoff, yoff) {
+        ctx.strokeStyle = "#59d9f9";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(20 + xoff, 400 + yoff);
+        ctx.moveTo( 20, 50 );
+        ctx.lineTo( 50, 20 );
+        ctx.lineTo( 325, 20 );
+        ctx.lineTo( 355, 50 );
+        ctx.lineTo( 355, 140 );
+        ctx.lineTo( 345, 150 );
+        ctx.lineTo( 345, 220 );
+        ctx.lineTo( 355, 230 );
+        ctx.lineTo( 355, 320 );
+        ctx.lineTo( 325, 350 );
+        ctx.lineTo( 325, 350 );
+        ctx.lineTo( 325, 350 );
+        ctx.lineTo( 225, 350 );
+        ctx.lineTo( 215, 340 );
+        ctx.lineTo( 135, 340 );
+        ctx.lineTo( 125, 350 );
+
+
+        // ctx.moveTo( 200, 200 );
+        //
+        // ctx.lineTo( 300, 300 );
+        ctx.stroke();
+    }
+
+    // //载入图片
+    // var img=new Image();
+    // img.src="v.png";
+    //
+    //
+    // img.onload=function()
+    // {
+    //
+    //     var pattern=ctx.createPattern(img,"repeat");
+    //     //img.width='100px';
+    //     ctx.fillStyle=pattern;
+    //     ctx.fill();
+    //     ctx.globalCompositeOperation="copy";
+    //
+    //
+    // }
+
+    //图片鼠标效果
+    // canvas.onmouseover=function()
+    // {
+    //     ctx.shadowColor="black";
+    //     ctx.shadowBlur=20;
+    //     ctx.shadowOffsetX=6;
+    //     ctx.shadowOffsetY=6;
+    //     ctx.fill();
+    //
+    //     ctx.globalCompositeOperation="xor";
+    //     ctx.shadowColor="white";
+    //     ctx.shadowBlur=20;
+    //     ctx.shadowOffsetX=6;
+    //     ctx.shadowOffsetY=6;
+    //     ctx.fill();
+    //
+    // }
+    // canvas.onmouseout=function()
+    // {
+    //     ctx.shadowColor="white";
+    //     ctx.fill();
+    //     ctx.globalCompositeOperation="lighter";
+    //     ctx.shadowColor="black";
+    //     ctx.fill();
+    //
+    // }
+
+
+</script>
+
 </body>
 </html>
