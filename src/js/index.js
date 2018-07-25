@@ -14,7 +14,11 @@ window.onload = function(){
     radialGradient.addColorStop(0.7, 'rgba(3, 88, 161, 1)');
     radialGradient.addColorStop(1, 'rgba(4, 81, 155, 1)');
 
-    ctx1.fillStyle = radialGradient;
+    ctx1.fillStyle = radialGradient;//渐变
+    ctx1.shadowColor = "rgba(9, 56, 121, 0.9)";//阴影
+    ctx1.shadowOffsetX = 0;
+    ctx1.shadowOffsetY = 0;
+    ctx1.shadowBlur = 40;
     ctx1.fill();
 
     function drawShape(ctx, xoff, yoff) {
@@ -67,5 +71,6 @@ window.onload = function(){
         ctx.lineTo( 20, 140 );
         ctx.lineTo( 20, 50 );
         ctx.stroke();
+        ////////////////////
     }
 };
