@@ -1,25 +1,23 @@
 'use strict';
-window.onload = function(){
-    var canvas=document.getElementById("canvasPic");
-    var canvasPic1=document.getElementById("canvasPic1");
-    var ctx=canvas.getContext("2d");
-    var ctx1=canvasPic1.getContext("2d");
+$(document).ready(function(){
+   for(var i=0;i<3;i++){
+       var ctx=$('.canvasPic').get(i).getContext("2d");
+       var ctx1=$('.canvasPic1').get(i).getContext("2d");
+       var ctx2=$('.canvasPic2').get(i).getContext("2d");
+       drawShape(ctx,0,0);
+       drawShape(ctx1,0,0);
+       drawShapeOut(ctx2,0,0);
 
-    drawShape(ctx,0,0);
-    drawShape(ctx1,0,0);
+       var radialGradient = ctx1.createRadialGradient (200, 200, 10, 200, 190, 260);
+       radialGradient.addColorStop(0, 'rgba(10, 52, 114, 0)');
+       radialGradient.addColorStop(0.3, 'rgba(9, 56, 121, 0.6)');
+       radialGradient.addColorStop(0.7, 'rgba(3, 88, 161, 1)');
+       radialGradient.addColorStop(1, 'rgba(4, 81, 155, 1)');
 
-    var radialGradient = ctx1.createRadialGradient (200, 200, 10, 200, 190, 260);
-    radialGradient.addColorStop(0, 'rgba(10, 52, 114, 0)');
-    radialGradient.addColorStop(0.3, 'rgba(9, 56, 121, 0.6)');
-    radialGradient.addColorStop(0.7, 'rgba(3, 88, 161, 1)');
-    radialGradient.addColorStop(1, 'rgba(4, 81, 155, 1)');
+       ctx1.fillStyle = radialGradient;//渐变
+       ctx1.fill();
+   }
 
-    ctx1.fillStyle = radialGradient;//渐变
-    ctx1.shadowColor = "rgba(9, 56, 121, 0.9)";//阴影
-    ctx1.shadowOffsetX = 0;
-    ctx1.shadowOffsetY = 0;
-    ctx1.shadowBlur = 40;
-    ctx1.fill();
 
     function drawShape(ctx, xoff, yoff) {
         ctx.strokeStyle = "#59d9f9";
@@ -73,4 +71,46 @@ window.onload = function(){
         ctx.stroke();
         ////////////////////
     }
-};
+    function drawShapeOut(ctx, xoff, yoff) {
+        ctx.strokeStyle = "#105689";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(20 + xoff, 400 + yoff);
+        ctx.moveTo( 17, 47 );
+        ctx.lineTo( 47, 15 );
+        ctx.lineTo( 268, 15 );
+        ctx.lineTo( 348, 15 );
+        ctx.lineTo( 378, 48 );
+        ctx.lineTo( 378, 143 );
+        ctx.lineTo( 368, 152 );
+        ctx.lineTo( 368, 222 );
+        ctx.lineTo( 378, 232 );
+        ctx.lineTo( 378, 328 );
+
+        ctx.lineTo( 348, 363 );
+
+        ctx.lineTo( 245, 363 );
+        ctx.lineTo( 235, 353 );
+        ctx.lineTo( 160, 353 );
+        ctx.lineTo( 152, 362 );
+        ctx.lineTo( 50, 362 );
+        ctx.lineTo( 17, 328 );
+        ctx.lineTo( 17, 232 );
+        ctx.lineTo( 27, 222 );
+        ctx.lineTo( 27, 153 );
+        ctx.lineTo( 17, 143 );
+        ctx.lineTo( 17, 47 );
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(19, 52, 110, 0.8)';       //设置填充颜色
+        ctx.shadowColor = "#1b3862";//阴影
+        ctx.shadowOffsetX = 5;
+        ctx.shadowOffsetY = 5;
+        ctx.shadowBlur = 50;
+        ctx.fill();
+    }
+
+    //轮播效果
+    $('.arrowRightBtn').off('click').click(function(){
+
+    });
+});
