@@ -87,6 +87,8 @@ body,html,img,div,p,ul,li,h1,h2,h3,h4,h5,h6,span,a{
     left: 50%;
     margin-left: -200px;
     top:0;
+    -webkit-transition: all 1s;
+    transition: all 1s;
 }
 .right-canvas{
     right:55px;

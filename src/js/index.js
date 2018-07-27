@@ -1,6 +1,6 @@
 'use strict';
 $(document).ready(function(){
-   for(var i=0;i<3;i++){
+   for(var i=0;i<5;i++){
        var ctx=$('.canvasPic').get(i).getContext("2d");
        var ctx1=$('.canvasPic1').get(i).getContext("2d");
        var ctx2=$('.canvasPic2').get(i).getContext("2d");
@@ -109,8 +109,21 @@ $(document).ready(function(){
         ctx.fill();
     }
 
+    var datas = [
+        {right:"55px", opacity: 0.4},
+        { "right":55,"opacity": 0.4},
+        {"left": 60,"opacity": 0.4,"top": "50%" }
+        ];
+
+    function Move(){
+        for(var i=0;i<3;i++){
+            var data = datas[i];
+            $('.content').eq(i).animate(data,500);
+        }
+    }
+
     //轮播效果
     $('.arrowRightBtn').off('click').click(function(){
-
+        Move();
     });
 });
