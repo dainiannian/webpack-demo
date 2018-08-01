@@ -1,19 +1,36 @@
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <style>
-        #test1{
-            width:100px;height:100px;background: #ccc;position:absolute;left:40%;top:30%;
-            -webkit-transition: all 1s;
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="generator" content="" />
+    <style type="text/css">
+        .div-test-mid {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            margin:200px 200px;
         }
-      #test1:hover{
-          -webkit-transform:scale(1.4);
-          transform:scale(1.4);
-      }
+
+        .span-test {
+            font-size: 12px;
+            display: block;
+            height: 10px;
+            width: 500px;
+            transition: height 1s;
+            background-color: rebeccapurple;
+        }
+
+        .span-test:hover {
+            height: 300px;
+        }
     </style>
 </head>
+
 <body>
-<div id="test1" style=""></div>
+<div class="div-test-mid">
+    <span class="span-test" style="background-color:green"></span>
+</div>
 </body>
+
 </html>
